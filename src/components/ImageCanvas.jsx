@@ -14,12 +14,12 @@ const ImageCanvas = ({name,message,date, writeTextToImage , className }) => {
     const updateCanvas = (canvas, ctx, width, height) => {
         ctx.clearRect(0, 0, width, height);
         ctx.drawImage(img.current, 0, 0, width, height);
-        let yPosition = 300;
-        yPosition = writeTextToImage(ctx, name, 20, yPosition, 38, 170, 40, 'right', 1);
-        yPosition += 21; // Add additional gap between this and next text block
-        yPosition = writeTextToImage(ctx, date, 20, yPosition, 10, 170, 42, 'right', 2);
-        yPosition += 11;
-        yPosition = writeTextToImage(ctx, message, 20, yPosition, 10, 170, 42, 'right', 2);
+        let yPosition = 290;
+        yPosition = writeTextToImage(ctx, name, 20, yPosition, 40, 140, 40, 'right', 1);
+        yPosition += 27; // Add additional gap between this and next text block
+        yPosition = writeTextToImage(ctx, date, 20, yPosition, 15, 140, 42, 'right', 2);
+        yPosition += 17;
+        yPosition = writeTextToImage(ctx, message, 20, yPosition, 15, 140, 42, 'right', 2);
         
       };
 
@@ -29,20 +29,20 @@ const ImageCanvas = ({name,message,date, writeTextToImage , className }) => {
         
         const scalingFactor = 3.75;  // 1500 / 400
       
-        let yPosition = 1150;
+        let yPosition = 1050;
         let baseX = 30;
-        let fontSize = 190;
-        let fontSizeSmall = 30;
+        let fontSize = 200;
+        let fontSizeSmall = 50;
         let maxWidth = 800;
-        let lineHeight = 170;
+        let lineHeight = 190;
         let textAlign = 'right';
   
         
-        yPosition = writeTextToImage(ctx, name, baseX, yPosition, fontSize, maxWidth, lineHeight, textAlign,1);
-        yPosition += 21 * scalingFactor
-        yPosition = writeTextToImage(ctx, date, baseX, yPosition, fontSizeSmall, maxWidth, lineHeight, textAlign,2);
-        yPosition += 11 * scalingFactor
-        yPosition = writeTextToImage(ctx, message, baseX, yPosition, fontSizeSmall, maxWidth, lineHeight, textAlign,2);
+        yPosition = writeTextToImage(ctx, name, baseX, yPosition, fontSize, 190 * scalingFactor, lineHeight, textAlign,1);
+        yPosition += 30 * scalingFactor
+        yPosition = writeTextToImage(ctx, date, baseX, yPosition, fontSizeSmall, 160 * scalingFactor, lineHeight, textAlign,2);
+        yPosition += 20 * scalingFactor
+        yPosition = writeTextToImage(ctx, message, baseX, yPosition, fontSizeSmall, 160 * scalingFactor, lineHeight, textAlign,2);
       };
       
 

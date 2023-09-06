@@ -111,9 +111,21 @@ body,*{
   font-size: 1em;
   border-radius: 2em;
   border: 1px solid transparent;
+  -webkit-transition: border 0.3s ease, box-shadow 0.3s ease;
   transition: border 0.3s ease, box-shadow 0.3s ease;
   outline: none;
+  -webkit-appearance: none; /* Disable default styling on WebKit-based browsers */
+  -webkit-border-radius: 2em; /* WebKit border-radius */
 }
+
+/* Add WebKit-specific focus styles */
+.input-field:focus,
+.custom-file-upload:focus {
+  -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+
 
 .input-field:disabled {
   background-color: white;
